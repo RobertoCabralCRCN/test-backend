@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 
 import { container } from "tsyringe";
-import { GetAllPokemonsUseCase } from "./IGetAllPokemonsUseCase";
+import { GetAllPokemonsUseCase } from "./GetAllPokemonsUseCase";
 
-class CreatePokemonController {
+class GetAllPokemonsController {
   async handle(request: Request, response: Response): Promise<Response> {
     const getAllPokemonsUseCase = container.resolve(GetAllPokemonsUseCase);
 
@@ -12,4 +12,4 @@ class CreatePokemonController {
     return response.status(200).send(getAll);
   }
 }
-export { CreatePokemonController };
+export { GetAllPokemonsController };

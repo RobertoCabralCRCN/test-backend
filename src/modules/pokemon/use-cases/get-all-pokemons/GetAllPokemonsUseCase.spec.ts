@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { FakePokemonRepository } from "../../repositories/fakes/FakePokemonRepository";
-import { GetAllPokemonsUseCase } from "./IGetAllPokemonsUseCase";
+import { GetAllPokemonsUseCase } from "./GetAllPokemonsUseCase";
 
 let fakePokemonRepository: FakePokemonRepository;
 let getAllPokemonsUseCase: GetAllPokemonsUseCase;

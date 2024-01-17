@@ -18,8 +18,9 @@ class PokemonRepository implements IPokemonRepository {
     return await this.repository.save(pokemon);
   }
 
-  async findById(row: number): Promise<Pokemon | undefined> {
-    return await this.repository.findOne(row);
+  async findById(row: number): Promise<Pokemon> {
+    const findedPokemon = await this.repository.findOne(row);
+    return findedPokemon;
   }
 
   async findAll(): Promise<Pokemon[]> {
