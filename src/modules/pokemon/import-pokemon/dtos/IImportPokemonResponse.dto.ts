@@ -1,6 +1,4 @@
-import { Pokemon } from "../../entity/Pokemon";
-
-interface ICreatePokemonDTO {
+export interface IImportPokemonResponseDTO {
   row: number;
   name: string;
   pokedexNumber: number;
@@ -31,13 +29,6 @@ interface ICreatePokemonDTO {
   futureEvolve: number;
   cp40: number;
   cp39: number;
+  created_at: Date;
+  updated_at: Date;
 }
-
-interface IPokemonRepository {
-  createAndSave(data: ICreatePokemonDTO): Promise<Pokemon>;
-  findAll(): Promise<Pokemon[]>;
-  findById(row: number): Promise<Pokemon>;
-  findByPokedexNumber(pokedexNumber: number): Promise<Pokemon>;
-}
-
-export { IPokemonRepository, ICreatePokemonDTO };

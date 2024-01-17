@@ -6,6 +6,9 @@ import {
 } from "../interfaces/PokemonRepository.interface";
 
 class FakePokemonRepository implements IPokemonRepository {
+  async findByPokedexNumber(pokedexNumber: number): Promise<Pokemon> {
+    throw new Error("Method not implemented.");
+  }
   private pokemons: Pokemon[] = [];
 
   async createAndSave(data: ICreatePokemonDTO): Promise<Pokemon> {
