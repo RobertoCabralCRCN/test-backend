@@ -1,4 +1,4 @@
-import { Pokemon } from "../../entity/Pokemon";
+import { Pokemon } from "../../entities/Pokemon";
 
 interface ICreatePokemonDTO {
   row: number;
@@ -6,7 +6,7 @@ interface ICreatePokemonDTO {
   pokedexNumber: number;
   imgName: string;
   generation: number;
-  evolutionStage: number;
+  evolutionStage: string;
   evolved: number;
   familyId: number;
   crossGen: number;

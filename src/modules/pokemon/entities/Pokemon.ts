@@ -24,7 +24,7 @@ class Pokemon {
   generation: number;
 
   @Column({ name: "evolution_stage" })
-  evolutionStage: number;
+  evolutionStage: string;
 
   @Column()
   evolved: number;

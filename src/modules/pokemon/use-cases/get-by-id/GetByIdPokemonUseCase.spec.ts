@@ -5,7 +5,7 @@ import { GetByIdPokemonUseCase } from "./GetByIdPokemonUseCase";
 let fakePokemonRepository: FakePokemonRepository;
 let getByIdPokemonUseCase: GetByIdPokemonUseCase;
 
-describe("Create Pokemon", () => {
+describe("Get Pokemon", () => {
   beforeEach(() => {
     fakePokemonRepository = new FakePokemonRepository();
     getByIdPokemonUseCase = new GetByIdPokemonUseCase(fakePokemonRepository);
@@ -13,14 +13,14 @@ describe("Create Pokemon", () => {
     jest.resetModules();
   });
 
-  it("Should be able to create a pokemon", async () => {
+  it("Should be able to get a pokemon", async () => {
     const newPokemon = await fakePokemonRepository.createAndSave({
       row: 1,
       name: "Bulbasaur",
       pokedexNumber: 1,
       imgName: "bulbasaur_image_name",
       generation: 1,
-      evolutionStage: 1,
+      evolutionStage: "1",
       evolved: 1,
       familyId: 1,
       crossGen: 0,

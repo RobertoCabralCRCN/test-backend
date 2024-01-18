@@ -4,7 +4,7 @@ export interface IPokemonResponseDTO {
   pokedexNumber: number;
   imgName: string;
   generation: number;
-  evolutionStage: number;
+  evolutionStage: string;
   evolved: number;
   familyId: number;
   crossGen: number;
