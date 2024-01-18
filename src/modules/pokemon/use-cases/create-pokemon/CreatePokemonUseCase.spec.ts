@@ -21,7 +21,7 @@ describe("Create Pokemon", () => {
         pokedexNumber: 1,
         imgName: "bulbasaur_image_name",
         generation: 1,
-        evolutionStage: 1,
+        evolutionStage: "1",
         evolved: 1,
         familyId: 1,
         crossGen: 0,
