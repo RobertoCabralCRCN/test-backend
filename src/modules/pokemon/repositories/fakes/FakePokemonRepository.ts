@@ -1,4 +1,3 @@
-// modules/pokemons/repositories/fakes/FakePokemonRepository.ts
 import { Pokemon } from "../../entities/Pokemon";
 import {
   ICreatePokemonDTO,

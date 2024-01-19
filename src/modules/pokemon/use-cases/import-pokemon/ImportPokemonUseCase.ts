@@ -97,7 +97,6 @@ class ImportPokemonUseCase {
 
   async execute(file: Express.Multer.File): Promise<void> {
     const pokemons = this.loadPokemons(file);
-    console.log(pokemons);
 
     for await (const pokemon of pokemons) {
       const data: IImportPokemonResponseDTO = {

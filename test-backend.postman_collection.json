@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "305054d0-7cf5-45bc-b5e8-7ab59f5c8134",
+		"name": "test-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25774681"
+	},
+	"item": [
+		{
+			"name": "import Pokemons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/N2140/Desktop/Pokemon Go.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlApi}}/import",
+					"host": [
+						"{{urlApi}}"
+					],
+					"path": [
+						"import"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Pokemons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"row\": 1,\r\n  \"name\": \"Bulbasaur\",\r\n  \"pokedexNumber\": 1,\r\n  \"imgName\": \"bulbasaur.png\",\r\n  \"generation\": 1,\r\n  \"evolutionStage\": 1,\r\n  \"evolved\": 0,\r\n  \"familyId\": 1,\r\n  \"crossGen\": 0,\r\n  \"type1\": \"Grass\",\r\n  \"type2\": \"Poison\",\r\n  \"weather1\": \"Sunny\",\r\n  \"weather2\": \"Cloudy\",\r\n  \"statTotal\": 318,\r\n  \"atk\": 49,\r\n  \"def\": 49,\r\n  \"sta\": 45,\r\n  \"legendary\": 0,\r\n  \"acquireable\": 1,\r\n  \"spawns\": 1,\r\n  \"regional\": 0,\r\n  \"raidable\": 1,\r\n  \"hatchable\": 1,\r\n  \"shiny\": 0,\r\n  \"nest\": 0,\r\n  \"new\": 1,\r\n  \"notGettable\": 0,\r\n  \"futureEvolve\": 1,\r\n  \"cp40\": 981,\r\n  \"cp39\": 870\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlApi}}/pokemons",
+					"host": [
+						"{{urlApi}}"
+					],
+					"path": [
+						"pokemons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlApi}}/pokemons/1",
+					"host": [
+						"{{urlApi}}"
+					],
+					"path": [
+						"pokemons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "take",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "skip",
+						"value": "0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlApi}}/pokemons?familyId=44&evolutionStage=2&type1=grass&type2=poison",
+					"host": [
+						"{{urlApi}}"
+					],
+					"path": [
+						"pokemons"
+					],
+					"query": [
+						{
+							"key": "familyId",
+							"value": "44"
+						},
+						{
+							"key": "evolutionStage",
+							"value": "2"
+						},
+						{
+							"key": "type1",
+							"value": "grass"
+						},
+						{
+							"key": "type2",
+							"value": "poison"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -16,7 +16,6 @@ class GetAllPokemonsController {
       type2: type2 ? String(type2) : null,
       evolutionStage: evolutionStage ? String(evolutionStage) : null,
     };
-    console.log(filters);
 
     const pagination = {
       take: take ? Number(take) : undefined,

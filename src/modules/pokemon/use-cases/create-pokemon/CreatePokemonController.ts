@@ -1,4 +1,3 @@
-// modules/pokemons/use-cases/CreatePokemonController.ts
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 import { CreatePokemonUseCase } from "./CreatePokemonUseCase";
