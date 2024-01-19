@@ -5,6 +5,14 @@ import { GetAllPokemonsUseCase } from "./GetAllPokemonsUseCase";
 let fakePokemonRepository: FakePokemonRepository;
 let getAllPokemonsUseCase: GetAllPokemonsUseCase;
 
+const filters = {
+  familyId: 1,
+  type1: "grass",
+  type2: "poison",
+  evolutionStage: "1",
+};
+const pagination = { take: 1, skip: 1 };
+
 describe("Get All Pokemon", () => {
   beforeEach(() => {
     fakePokemonRepository = new FakePokemonRepository();
@@ -46,6 +54,8 @@ describe("Get All Pokemon", () => {
       cp40: 981,
       cp39: 967,
     });
-    await expect(getAllPokemonsUseCase.execute()).resolves.not.toThrow();
+    await expect(
+      getAllPokemonsUseCase.execute(filters, pagination)
+    ).resolves.not.toThrow();
   });
 });

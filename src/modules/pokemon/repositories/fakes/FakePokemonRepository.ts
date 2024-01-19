@@ -12,7 +12,7 @@ class FakePokemonRepository implements IPokemonRepository {
   private pokemons: Pokemon[] = [];
 
   async createAndSave(data: ICreatePokemonDTO): Promise<Pokemon> {
-    const pokemon = new Pokemon(); // Implemente a lógica de criação conforme necessário
+    const pokemon = new Pokemon();
     Object.assign(pokemon, data);
 
     this.pokemons.push(pokemon);
@@ -29,7 +29,7 @@ class FakePokemonRepository implements IPokemonRepository {
   }
 
   async importFromXlsx(file: Express.Multer.File): Promise<void> {
-    // Lógica de importação para o repositório fake
+    await Promise.resolve(this.pokemons);
   }
 }
 
