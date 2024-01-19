@@ -4,7 +4,7 @@ import {
   ICreatePokemonDTO,
   IPokemonRepository,
 } from "../interfaces/PokemonRepository.interface";
-import { getRepository, Repository } from "typeorm";
+import { getRepository, Repository, FindConditions } from "typeorm";
 
 class PokemonRepository implements IPokemonRepository {
   private repository: Repository<Pokemon>;
@@ -55,8 +55,48 @@ class PokemonRepository implements IPokemonRepository {
     return findedPokemon;
   }
 
-  async findAll(): Promise<Pokemon[]> {
-    return await this.repository.find();
+  async findAll(
+    filters: {
+      familyId?: number;
+      type1?: string;
+      type2?: string;
+      evolutionStage?: string;
+    },
+    pagination: { take?: number; skip?: number }
+  ): Promise<Pokemon[]> {
+    const condition: FindConditions<Pokemon> = {};
+
+    if (filters.familyId) {
+      condition.familyId = filters.familyId;
+    }
+
+    if (filters.type1) {
+      condition.type1 = filters.type1;
+    }
+
+    if (filters.type2) {
+      condition.type2 = filters.type2;
+    }
+
+    if (filters.evolutionStage) {
+      condition.evolutionStage = filters.evolutionStage;
+    }
+
+    let result;
+    if (condition) {
+      result = await this.repository.find({
+        where: condition,
+        take: pagination.take | 0,
+        skip: pagination.skip | 0,
+      });
+    } else {
+      result = await this.repository.find({
+        take: pagination.take | 0,
+        skip: pagination.skip | 0,
+      });
+    }
+
+    return result;
   }
 
   async findByPokedexNumber(pokedexNumber: number): Promise<Pokemon> {

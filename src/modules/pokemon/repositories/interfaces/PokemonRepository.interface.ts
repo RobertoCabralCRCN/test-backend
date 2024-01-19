@@ -35,7 +35,15 @@ interface ICreatePokemonDTO {
 
 interface IPokemonRepository {
   createAndSave(data: ICreatePokemonDTO): Promise<Pokemon>;
-  findAll(): Promise<Pokemon[]>;
+  findAll(
+    filters: {
+      familyId?: number;
+      type1?: string;
+      type2?: string;
+      evolutionStage?: string;
+    },
+    pagination: { take?: number; skip?: number }
+  ): Promise<Pokemon[]>;
   findById(row: number): Promise<Pokemon>;
   findByPokedexNumber(pokedexNumber: number): Promise<Pokemon>;
 }
