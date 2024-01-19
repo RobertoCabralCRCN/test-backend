@@ -14,19 +14,19 @@ services:
     volumes:
       - pgdata:/data/postgres
 
-# app:
-#   build: .
-#   container_name: dinheirow
-#   restart: always
-#   ports:
-#     - 3000:3000
-#     - 9229:9229
-#   volumes:
-#     - .:/usr/app
-#   links:
-#     - database
-#   depends_on:
-#     - database
+app:
+  build: .
+  container_name: dinheirow
+  restart: always
+  ports:
+    - 3000:3000
+    - 9229:9229
+  volumes:
+    - .:/usr/app
+  links:
+    - database
+  depends_on:
+    - database
 
 volumes:
   pgdata:
