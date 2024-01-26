@@ -66,7 +66,7 @@ Boa sorte! :)
 
 - Ter docker e docker compose instalado
 
-1. Acessar o diretório do projeto (SerasaApp)
+1. Acessar o diretório do projeto (Dinheirow)
 
 2. Executar o comando de instalação
 
